@@ -1,0 +1,402 @@
+/* ========================================================================== */
+/* TAILWIND BASE                                                              */
+/* ========================================================================== */
+
+@import "tailwindcss";
+
+/* ========================================================================== */
+/* GLOBAL RESET                                                               */
+/* ========================================================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Prevent mobile zoom issues */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /* Prevent tap-highlight flash on iOS */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ========================================================================== */
+/* ROOT TOKENS (LIGHT SYSTEM)                                                 */
+/* ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* BASE BACKGROUNDS (WHITE FIRST) */
+  --background: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-tertiary: #f1f5f9;
+
+  /* SURFACES */
+  --surface: #ffffff;
+  --surface-hover: #f8fafc;
+
+  /* BORDERS */
+  --border: rgba(15, 23, 42, 0.08);
+  --border-light: rgba(15, 23, 42, 0.12);
+
+  /* TEXT */
+  --text-primary: #0f172a;
+  --text-secondary: rgba(15, 23, 42, 0.75);
+  --text-muted: rgba(15, 23, 42, 0.55);
+
+  /* ACCENT (BLUE ONLY FOR COMPONENTS) */
+  --primary: #38bdf8;
+  --primary-dark: #0ea5e9;
+  --secondary: #6366f1;
+
+  /* STATUS */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* RADIUS */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  /* SHADOWS (LIGHT UI STYLE) */
+  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.12);
+  --shadow-primary: 0 15px 40px rgba(56, 189, 248, 0.25);
+
+  /* TRANSITIONS */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* LAYOUT */
+  --container-width: 1400px;
+  --section-padding: 7rem;
+}
+
+
+/* ========================================================================== */
+/* BODY                                                                       */
+/* ========================================================================== */
+
+body {
+  width: 100%;
+  min-height: 100%;
+
+  background: var(--background);
+  color: var(--text-primary);
+
+  font-family:
+    "Plus Jakarta Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  overflow-x: hidden;
+}
+
+/* ========================================================================== */
+/* MEDIA RESET                                                                */
+/* ========================================================================== */
+
+@layer base {
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* ========================================================================== */
+/* FORM ELEMENTS                                                              */
+/* ========================================================================== */
+
+/* iOS zoom prevention — must stay outside @layer so it always wins */
+input,
+textarea,
+select {
+  font-size: 16px !important;
+  touch-action: manipulation;
+}
+
+@layer base {
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Date/time inputs: let Tailwind [color-scheme:dark] override per-component */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea, select {
+    font-family: inherit;
+  }
+}
+
+/* Touch — stays outside @layer */
+button,
+a {
+  touch-action: manipulation;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+/* ========================================================================== */
+/* TYPOGRAPHY                                                                 */
+/* ========================================================================== */
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+  }
+
+  p {
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  small {
+    color: var(--text-muted);
+  }
+}
+
+/* ========================================================================== */
+/* SCROLLBAR                                                                  */
+/* ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* ========================================================================== */
+/* SELECTION                                                                  */
+/* ========================================================================== */
+
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #0f172a;
+}
+
+/* ========================================================================== */
+/* ROOT SHELL                                                                 */
+/* ========================================================================== */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================================== */
+/* RESPONSIVE TYPOGRAPHY                                                      */
+/* ========================================================================== */
+
+/* iPhone SE (≤374px) */
+@media (max-width: 374px) {
+  :root { --section-padding: 3rem; }
+}
+
+/* Standard phones (375px–767px) */
+@media (min-width: 375px) and (max-width: 767px) {
+  :root { --section-padding: 4rem; }
+}
+
+/* ========================================================================== */
+/* CONTAINER SYSTEM                                                           */
+/* ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+
+  /* xs: iPhone SE (320px) */
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* sm: ≥375px (iPhone 16E / standard phones) */
+@media (min-width: 375px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* md: ≥768px (tablets) */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* lg: ≥1024px (laptops) */
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+/* ========================================================================== */
+/* UTILITIES                                                                  */
+/* ========================================================================== */
+
+@layer utilities {
+  .text-center  { text-align: center; }
+  .text-primary { color: var(--primary); }
+  .text-muted   { color: var(--text-muted); }
+  .flex-center  { display: flex; align-items: center; justify-content: center; }
+  .glow         { box-shadow: 0 0 60px rgba(56, 189, 248, 0.18); }
+}
+
+/* ========================================================================== */
+/* GLASS (LIGHT VERSION)                                                      */
+/* ========================================================================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(15, 23, 42, 0.08);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================================================== */
+/* CARDS                                                                      */
+/* ========================================================================== */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  background: var(--surface-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================================================== */
+/* BUTTONS                                                                    */
+/* ========================================================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  padding: 0.9rem 1.7rem;
+
+  border-radius: var(--radius-md);
+
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}

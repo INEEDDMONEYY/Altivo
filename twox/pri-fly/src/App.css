@@ -1,0 +1,118 @@
+/* ========================================================================== */
+/* APP SHELL                                                                  */
+/* ========================================================================== */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  /* Prevent horizontal overflow on all devices */
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content ONLY controls growth */
+main {
+  flex: 1;
+  width: 100%;
+  /* Constrain overflow on mobile */
+  overflow-x: hidden;
+}
+
+/* Page wrapper */
+.page {
+  width: 100%;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* ========================================================================== */
+/* DEVICE RESPONSIVENESS                                                      */
+/* ========================================================================== */
+
+/* iPhone SE (320px) — tightest breakpoint */
+@media (max-width: 374px) {
+  h1 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  h2 { font-size: clamp(1.375rem, 6vw, 1.75rem); }
+  h3 { font-size: clamp(1.125rem, 5vw, 1.375rem); }
+  p  { font-size: 0.9375rem; }
+}
+
+/* iPhone 16E / standard phones (375px–767px) */
+@media (min-width: 375px) and (max-width: 767px) {
+  h1 { font-size: clamp(1.875rem, 7vw, 2.5rem); }
+  h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+}
+
+/* Tablet (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 { font-size: clamp(2.25rem, 5vw, 3rem); }
+}
+
+/* Prevent section overflow on all narrow screens */
+@media (max-width: 767px) {
+  section {
+    overflow-x: hidden;
+  }
+
+  /* Reduce section vertical padding on small screens */
+  .section {
+    padding-block: 3.5rem;
+  }
+}
+
+/* ========================================================================== */
+/* PAGE TRANSITIONS                                                           */
+/* ========================================================================== */
+
+.fade-in {
+  animation: fadeIn 300ms ease;
+}
+
+.fade-up {
+  animation: fadeUp 400ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================================== */
+/* LOADING STATES                                                             */
+/* ========================================================================== */
+
+.page-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ========================================================================== */
+/* FOCUS STATES                                                               */
+/* ========================================================================== */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
