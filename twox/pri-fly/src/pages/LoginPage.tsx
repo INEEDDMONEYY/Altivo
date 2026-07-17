@@ -1,5 +1,1 @@
-export default function LoginPage() {
-    return(
-        <></>
-    )
-}
+export { default } from "../features/auth/LoginPage";
