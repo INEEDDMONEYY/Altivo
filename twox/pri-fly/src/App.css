@@ -116,3 +116,65 @@ a:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* ========================================================================== */
+/* DARK THEME TOKENS — scope: [data-theme="dark"]                            */
+/* ========================================================================== */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* BASE BACKGROUNDS */
+  --background: #06080f;
+  --background-secondary: #0b0e17;
+  --background-tertiary: #10141f;
+
+  /* SURFACES */
+  --surface: #10141f;
+  --surface-hover: #161b29;
+  --surface-elevated: #1b2233; /* NEW — modals, dropdowns, popovers */
+
+  /* BORDERS */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.2); /* NEW — emphasized dividers */
+
+  /* TEXT */
+  --text-primary: #f8fafc;
+  --text-secondary: rgba(248, 250, 252, 0.72);
+  --text-muted: rgba(248, 250, 252, 0.5);
+
+  /* ACCENT — same sky-blue values, they already work on dark */
+  --primary: #38bdf8;
+  --primary-dark: #0ea5e9;
+  --secondary: #818cf8; /* brightened from indigo-500 to indigo-400 for dark contrast */
+
+  /* STATUS — brightened one step for dark-bg legibility */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  /* SHADOWS — box-shadow barely reads on dark, glow does the work instead */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.5);
+  --shadow-primary: 0 15px 40px rgba(56, 189, 248, 0.35);
+
+  /* CHART PALETTE — NEW, ordered for max distinction at a glance */
+  --chart-1: #38bdf8; /* sky */
+  --chart-2: #a78bfa; /* violet */
+  --chart-3: #34d399; /* emerald */
+  --chart-4: #fbbf24; /* amber */
+  --chart-5: #fb7185; /* rose */
+}
+
+/* Dark glass variant — same recipe as .glass, dark-tuned */
+[data-theme="dark"] .glass {
+  background: rgba(16, 20, 31, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .glow {
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.3);
+}
