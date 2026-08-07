@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type { RFQ } from "../types";
+import type { RFQ, CreateRFQPayload } from "../types";
 import { createRFQ } from "../api/rfqApi";
 
 export function useCreateRFQ() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const submit = async (payload: Partial<RFQ>) => {
+  const submit = async (payload: CreateRFQPayload): Promise<RFQ | null> => {
     setSubmitting(true);
     setError(null);
     try {

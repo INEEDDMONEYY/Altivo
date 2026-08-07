@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useAuthStore } from "../../store/authStore";
 import { getErrorMessage } from "../../services/apiClient";
+import { getRoleHomePath } from "../../config/permissions";
 import Input from "../../shared/ui/Input";
 import Button from "../../shared/ui/Button";
 
@@ -16,7 +17,7 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const from = (location.state as { from?: Location })?.from?.pathname ?? "/dashboard";
+  const from = (location.state as { from?: Location })?.from?.pathname;
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -25,7 +26,8 @@ export default function LoginPage() {
 
     try {
       await login({ email, password });
-      navigate(from, { replace: true });
+      const role = useAuthStore.getState().user?.role;
+      navigate(from ?? getRoleHomePath(role), { replace: true });
     } catch (err) {
       setError(getErrorMessage(err, "Invalid credentials"));
     } finally {
@@ -34,11 +36,16 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <h1 className="text-xl font-semibold text-slate-900">Sign in</h1>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <div>
+        <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">Welcome back</h1>
+        <p className="mt-2 text-sm text-slate-500">Sign in to your Altivo dashboard.</p>
+      </div>
 
       {error && (
-        <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
+        <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+          {error}
+        </p>
       )}
 
       <Input
@@ -48,6 +55,7 @@ export default function LoginPage() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         autoComplete="email"
+        placeholder="you@company.com"
         required
       />
 
@@ -58,21 +66,26 @@ export default function LoginPage() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         autoComplete="current-password"
+        placeholder="••••••••"
         required
       />
 
-      <Button type="submit" isLoading={isSubmitting}>
+      <div className="flex justify-end text-sm">
+        <Link to="/forgot-password" className="text-slate-500 hover:text-slate-700 hover:underline">
+          Forgot password?
+        </Link>
+      </div>
+
+      <Button type="submit" isLoading={isSubmitting} className="w-full">
         Sign in
       </Button>
 
-      <div className="flex justify-between text-sm text-slate-600">
-        <Link to="/forgot-password" className="hover:underline">
-          Forgot password?
-        </Link>
-        <Link to="/register" className="hover:underline">
+      <p className="text-center text-sm text-slate-500">
+        Don't have an account?{" "}
+        <Link to="/register" className="font-medium text-slate-900 hover:underline">
           Create account
         </Link>
-      </div>
+      </p>
     </form>
   );
 }
