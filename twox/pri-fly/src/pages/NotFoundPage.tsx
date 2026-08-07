@@ -3,7 +3,7 @@ import { Plane, ArrowLeft, Home } from "lucide-react";
 
 export default function NotFoundPage() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-slate-950 text-white px-4 text-center">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-slate-950 text-white px-4 text-center">
 
       {/* Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-red-500/10 blur-[120px] pointer-events-none" />

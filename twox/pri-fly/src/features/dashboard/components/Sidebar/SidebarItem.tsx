@@ -6,14 +6,16 @@ export interface SidebarItemProps {
   href: string;
   icon?: LucideIcon;
   collapsed?: boolean;
+  onNavigate?: () => void;
 }
 
-export default function SidebarItem({ label, href, icon: Icon, collapsed }: SidebarItemProps) {
+export default function SidebarItem({ label, href, icon: Icon, collapsed, onNavigate }: SidebarItemProps) {
   return (
     <NavLink
       to={href}
       end
       title={collapsed ? label : undefined}
+      onClick={onNavigate}
       className={({ isActive }) =>
         `flex items-center gap-3 rounded-[var(--radius-md)] px-3 py-2 text-sm font-medium transition-colors ${
           collapsed ? "justify-center" : ""

@@ -4,9 +4,10 @@ interface SidebarGroupProps {
   label?: string;
   items: SidebarItemProps[];
   collapsed?: boolean;
+  onNavigate?: () => void;
 }
 
-export default function SidebarGroup({ label, items, collapsed }: SidebarGroupProps) {
+export default function SidebarGroup({ label, items, collapsed, onNavigate }: SidebarGroupProps) {
   return (
     <div className="mb-6">
       {label && !collapsed && (
@@ -16,7 +17,7 @@ export default function SidebarGroup({ label, items, collapsed }: SidebarGroupPr
       )}
       <div className="flex flex-col gap-1">
         {items.map((item) => (
-          <SidebarItem key={item.label} {...item} collapsed={collapsed} />
+          <SidebarItem key={item.label} {...item} collapsed={collapsed} onNavigate={onNavigate} />
         ))}
       </div>
     </div>

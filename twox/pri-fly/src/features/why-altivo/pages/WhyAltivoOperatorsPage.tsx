@@ -1,6 +1,29 @@
-import PlaceholderPage from "../../../shared/components/PlaceholderPage";
-import heroImage from "../../../assets/images/in-sky.png";
+import AudienceHero from "../components/AudienceHero";
+import AudienceBenefits from "../components/AudienceBenefits";
 
-export default function WhyAltivoOperatorsPage() {
-  return <PlaceholderPage eyebrow="Why Altivo" title="Why Altivo — For Operators" image={heroImage} />;
+import { operatorAudience } from "../data/audience";
+import heroImage from "../../../assets/images/black-jet.png";
+
+
+export default function WhyAltivoOperatorsPage(){
+
+return (
+
+<>
+<AudienceHero
+ eyebrow={operatorAudience.eyebrow}
+ title={operatorAudience.title}
+ description={operatorAudience.description}
+ image={heroImage}
+/>
+
+
+<AudienceBenefits
+ benefits={operatorAudience.benefits}
+/>
+
+</>
+
+);
+
 }
