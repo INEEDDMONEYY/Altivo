@@ -1,7 +1,6 @@
 import { useState } from "react";
 import SidebarGroup from "./SidebarGroup";
 import SidebarCollapse from "./SidebarCollapse";
-import SidebarFooter from "./SidebarFooter";
 import AltivoIcon from "../../../../assets/icons/altivo-logo-icon.png";
 import { useAuthStore } from "../../../../store/authStore";
 import { adminNavigation } from "../../config/adminNavigation";
@@ -55,8 +54,6 @@ export default function DashboardSidebar() {
           <SidebarGroup key={i} label={group.label} items={group.items} collapsed={collapsed} />
         ))}
       </nav>
-
-      <SidebarFooter collapsed={collapsed} />
     </aside>
   );
 }

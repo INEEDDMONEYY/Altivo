@@ -23,6 +23,7 @@ export const PERMISSIONS = {
   SLA_VIEW: "sla:view",
   SETTINGS_VIEW: "settings:view",
   USERS_MANAGE: "users:manage",
+  LEADERBOARD_VIEW: "leaderboard:view",
 } as const;
 
 export type Permission = (typeof PERMISSIONS)[keyof typeof PERMISSIONS];

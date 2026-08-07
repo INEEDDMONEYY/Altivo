@@ -13,7 +13,7 @@ export default function NavigationActions() {
       </Link>
 
       <Link
-        to="/register"
+        to="/join-altivo"
         className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-red-400 to-gray-500 text-white text-sm font-semibold tracking-wide hover:opacity-90 transition shadow-lg shadow-red-500/20"
       >
         Get Started

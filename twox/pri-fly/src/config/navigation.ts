@@ -1,5 +1,4 @@
-import { Sparkles, CreditCard, UserPlus, BookOpen, Mail } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+
 
 export interface NavChild {
   label: string;
@@ -9,7 +8,6 @@ export interface NavChild {
 export interface NavLink {
   label: string;
   path: string;
-  icon: LucideIcon;
   children?: NavChild[];
 }
 
@@ -17,7 +15,6 @@ export const navLinks: NavLink[] = [
   {
     label: "Why Altivo",
     path: "/why-altivo",
-    icon: Sparkles,
     children: [
       { label: "For Brokers", path: "/why-altivo/brokers" },
       { label: "For Operators", path: "/why-altivo/operators" },
@@ -26,16 +23,16 @@ export const navLinks: NavLink[] = [
   {
     label: "Payments",
     path: "/payments",
-    icon: CreditCard,
     children: [
-      { label: "How It Works", path: "/payments/how-it-works" },
+      { label: "How Payments Work", path: "/payments/how-it-works" },
       { label: "Security", path: "/payments/security" },
+      { label: "FAQ Payments", path: "/payments/faq-payments"},
+      { label: "Payments For Operators", path: "/payments/operators" },
     ],
   },
   {
     label: "Join Altivo",
     path: "/join-altivo",
-    icon: UserPlus,
     children: [
       { label: "As a Broker", path: "/join-altivo/brokers" },
       { label: "As an Operator", path: "/join-altivo/operators" },
@@ -44,16 +41,24 @@ export const navLinks: NavLink[] = [
   {
     label: "Resources",
     path: "/resources",
-    icon: BookOpen,
     children: [
       { label: "Blog", path: "/resources/blog" },
       { label: "FAQs", path: "/resources/faqs" },
       { label: "Guides", path: "/resources/guides" },
+      { label: "APIs", path: "/resources/apis" },
+      { label: "Dev Portal", path: "/resources/dev-portal" },
     ],
   },
   {
     label: "Contact",
     path: "/contact",
-    icon: Mail,
+    children: [
+      { label: "Submit Ticket", path: "/contact/submit-ticket" },
+      { label: "Request Callback", path: "/contact/request-callback" },
+      { label: "Email Us", path: "/contact/email" },
+    ]
   },
+  {
+    label: "Pricing", path: "/pricing",
+  }
 ];

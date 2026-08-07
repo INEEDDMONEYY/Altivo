@@ -10,6 +10,7 @@ import {
   Clock,
   Settings,
   Users,
+  Trophy,
 } from "lucide-react";
 
 export const adminNavigation: DashboardNavItem[] = [
@@ -21,5 +22,19 @@ export const adminNavigation: DashboardNavItem[] = [
   { label: "Analytics", href: "/dashboard/analytics", icon: BarChart3, permission: PERMISSIONS.ANALYTICS_VIEW },
   { label: "SLA", href: "/dashboard/sla", icon: Clock, permission: PERMISSIONS.SLA_VIEW },
   { label: "Users", href: "/dashboard/users", icon: Users, permission: PERMISSIONS.USERS_MANAGE },
+  {
+    label: "Operator Leaderboard",
+    href: "/dashboard/leaderboard/operators",
+    icon: Trophy,
+    group: "Leaderboards",
+    permission: PERMISSIONS.LEADERBOARD_VIEW,
+  },
+  {
+    label: "Broker Leaderboard",
+    href: "/dashboard/leaderboard/brokers",
+    icon: Trophy,
+    group: "Leaderboards",
+    permission: PERMISSIONS.LEADERBOARD_VIEW,
+  },
   { label: "Settings", href: "/dashboard/settings", icon: Settings, permission: PERMISSIONS.SETTINGS_VIEW },
 ];
