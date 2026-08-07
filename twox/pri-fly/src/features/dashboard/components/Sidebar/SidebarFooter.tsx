@@ -9,7 +9,7 @@ export default function SidebarFooter({ collapsed }: SidebarFooterProps) {
     <button
       type="button"
       title={collapsed ? "Log out" : undefined}
-      className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 ${
+      className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)] ${
         collapsed ? "justify-center" : ""
       }`}
     >

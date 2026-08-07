@@ -2,6 +2,7 @@ import { useState } from "react";
 import SidebarGroup from "./SidebarGroup";
 import SidebarCollapse from "./SidebarCollapse";
 import SidebarFooter from "./SidebarFooter";
+import AltivoIcon from "../../../../assets/icons/altivo-logo-icon.png";
 import { useAuthStore } from "../../../../store/authStore";
 import { adminNavigation } from "../../config/adminNavigation";
 import { brokerNavigation } from "../../config/brokerNavigation";
@@ -37,7 +38,14 @@ export default function DashboardSidebar() {
         collapsed ? "w-20" : "w-64"
       }`}
     >
-      <div className="flex items-center justify-between px-4 py-5">
+      <div
+        className={`flex items-center px-4 py-5 ${
+          collapsed ? "flex-col gap-3" : "gap-2.5"
+        }`}
+      >
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-red-400 to-gray-500">
+          <img src={AltivoIcon} alt="Altivo" className="h-5 w-5" />
+        </div>
         {!collapsed && <span className="text-lg font-bold text-[var(--text-primary)]">Altivo</span>}
         <SidebarCollapse collapsed={collapsed} onToggle={() => setCollapsed((c) => !c)} />
       </div>

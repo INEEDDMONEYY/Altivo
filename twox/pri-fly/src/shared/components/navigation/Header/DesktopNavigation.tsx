@@ -1,32 +1,56 @@
 import { NavLink } from "react-router-dom";
-import { Plane, Building2, BookOpen, FileText } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
-const links: { label: string; path: string; icon: LucideIcon }[] = [
-  { label: "Aircraft",     path: "/aircraft",    icon: Plane },
-  { label: "Operators",    path: "/operators",   icon: Building2 },
-  { label: "How It Works", path: "/how-it-works", icon: BookOpen },
-  { label: "RFQs",         path: "/rfqs",        icon: FileText },
-];
+import { navLinks } from "../../../../config/navigation";
 
 export default function DesktopNavigation() {
   return (
-    <nav className="flex items-center gap-2">
-      {links.map(({ label, path, icon: Icon }) => (
-        <NavLink
-          key={path}
-          to={path}
-          className={({ isActive }) =>
-            `flex items-center gap-2 text-sm px-4 py-2 rounded-lg transition ${
-              isActive
-                ? "text-white bg-white/10"
-                : "text-white/60 hover:text-white hover:bg-white/5"
-            }`
-          }
-        >
-          <Icon size={20} strokeWidth={2} className="shrink-0" />
-          {label}
-        </NavLink>
+    <nav className="flex items-center gap-3">
+      {navLinks.map(({ label, path, icon: Icon, children }) => (
+        <div key={path} className="group relative">
+          <NavLink
+            to={path}
+            className={({ isActive }) =>
+              `flex items-center gap-2 text-sm px-4 py-2 rounded-lg transition ${
+                isActive
+                  ? "text-red-400 bg-white/10"
+                  : "text-white/60 hover:text-red-300 hover:bg-white/5"
+              }`
+            }
+          >
+            <Icon size={18} strokeWidth={2} className="shrink-0" />
+            {label}
+            {children && (
+              <ChevronDown
+                size={14}
+                strokeWidth={2}
+                className="shrink-0 transition group-hover:rotate-180"
+              />
+            )}
+          </NavLink>
+
+          {children && (
+            <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="min-w-[200px] rounded-xl border border-white/10 bg-black/95 p-2 shadow-xl backdrop-blur-xl">
+                {children.map((child) => (
+                  <NavLink
+                    key={child.path}
+                    to={child.path}
+                    className={({ isActive }) =>
+                      `block rounded-lg px-3 py-2 text-sm transition ${
+                        isActive
+                          ? "text-red-400 bg-white/10"
+                          : "text-white/60 hover:text-red-300 hover:bg-white/5"
+                      }`
+                    }
+                  >
+                    {child.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       ))}
     </nav>
   );

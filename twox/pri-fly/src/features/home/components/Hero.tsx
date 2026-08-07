@@ -1,5 +1,5 @@
 import BookingWidget from "./BookingWidget";
-import heroImage from "../../../assets/altivo-jet.jpg";
+import heroImage from "../../../assets/images/black-n-white.png";
 
 export default function Hero() {
   return (
@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/90" />
 
       {/* Subtle sky accent glow (lighter, less aggressive) */}
-      <div className="absolute left-1/2 top-24 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-sky-400/10 blur-[160px]" />
+      <div className="absolute left-1/2 top-24 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-red-400/10 blur-[160px]" />
 
       {/* Content */}
       <div className="container relative z-10">
@@ -28,13 +28,13 @@ export default function Hero() {
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-sky-500">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-red-500">
               Private Aviation RFQ Network
             </p>
 
             <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
               Request private aircraft instantly.
-              <span className="block text-sky-400">
+              <span className="block text-red-400">
                 Compare operators in real time.
               </span>
             </h1>

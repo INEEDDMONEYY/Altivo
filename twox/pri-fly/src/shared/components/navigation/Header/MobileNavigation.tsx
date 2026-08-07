@@ -31,7 +31,7 @@ export default function MobileNavigation() {
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 px-3 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition text-sm"
             >
-              <Icon size={20} strokeWidth={2} className="text-sky-400 shrink-0" />
+              <Icon size={20} strokeWidth={2} className="text-red-400 shrink-0" />
               {label}
             </Link>
           ))}
@@ -42,13 +42,13 @@ export default function MobileNavigation() {
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 px-3 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/5 transition text-sm"
             >
-              <LogIn size={20} strokeWidth={2} className="text-sky-400 shrink-0" />
+              <LogIn size={20} strokeWidth={2} className="text-red-400 shrink-0" />
               Sign In
             </Link>
             <Link
               to="/register"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 text-white font-medium text-sm hover:opacity-90 transition"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-red-400 to-gray-500 text-white font-medium text-sm hover:opacity-90 transition"
             >
               Get Started
               <ArrowRight size={18} />

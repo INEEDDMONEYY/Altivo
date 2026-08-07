@@ -12,7 +12,7 @@ export default function Switch({ checked, onChange, className = "" }: SwitchProp
       aria-checked={checked}
       onClick={() => onChange(!checked)}
       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-        checked ? "bg-sky-500" : "bg-slate-300"
+        checked ? "bg-red-500" : "bg-slate-300"
       } ${className}`}
     >
       <span

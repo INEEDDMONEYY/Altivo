@@ -1,7 +1,7 @@
 import type { Aircraft } from "../../../types/aircraft";
-import  Private  from "../../../assets/private-plane.jpg"
-import  Interior from "../../../assets/interior-private-plane.jpg"
-import  Oversea from "../../../assets/oversea-private-jet.jpg"
+import  Private  from "../../../assets/images/private-plane.jpg"
+import  Interior from "../../../assets/images/interior-private-plane.jpg"
+import  Oversea from "../../../assets/images/oversea-private-jet.jpg"
 
 export const aircraft: Aircraft[] = [
     {

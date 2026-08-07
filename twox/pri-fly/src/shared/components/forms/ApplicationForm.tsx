@@ -23,7 +23,7 @@ export default function ApplicationForm() {
       {/* TODO: add application form fields */}
       <button
         type="submit"
-        className="rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-600"
+        className="rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600"
       >
         Submit Application
       </button>

@@ -11,7 +11,7 @@ export default function SidebarCollapse({ collapsed, onToggle }: SidebarCollapse
       type="button"
       onClick={onToggle}
       aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-      className="flex items-center justify-center rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+      className="flex items-center justify-center rounded-lg p-2 text-[var(--text-muted)] hover:bg-[var(--surface-hover)]"
     >
       {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
     </button>

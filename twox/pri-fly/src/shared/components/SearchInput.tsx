@@ -13,7 +13,7 @@ export default function SearchInput({
       />
       <input
         type="search"
-        className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+        className="w-full rounded-lg border border-slate-300 py-2 pl-9 pr-3 text-sm outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
         {...props}
       />
     </div>

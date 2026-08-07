@@ -18,7 +18,7 @@ export default function UploadField({
   };
 
   return (
-    <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-300 p-8 text-center text-sm text-slate-500 hover:border-sky-400 hover:text-sky-600">
+    <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-300 p-8 text-center text-sm text-slate-500 hover:border-red-400 hover:text-red-600">
       <Upload size={24} />
       <span>{label}</span>
       <input type="file" accept={accept} onChange={handleChange} className="hidden" />

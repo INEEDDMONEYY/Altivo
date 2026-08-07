@@ -16,24 +16,24 @@ const stats: Stat[] = [
     value: "1,200+",
     description: "Active operators on the network",
     icon: Building2,
-    iconColor: "text-sky-500",
-    iconBg: "bg-sky-50",
+    iconColor: "text-red-500",
+    iconBg: "bg-red-50",
   },
   {
     label: "Flights Requested",
     value: "48K+",
     description: "RFQs submitted to date",
     icon: PlaneTakeoff,
-    iconColor: "text-blue-500",
-    iconBg: "bg-blue-50",
+    iconColor: "text-gray-500",
+    iconBg: "bg-gray-100",
   },
   {
     label: "Global Hubs",
     value: "40+",
     description: "Countries with active coverage",
     icon: Globe,
-    iconColor: "text-indigo-500",
-    iconBg: "bg-indigo-50",
+    iconColor: "text-red-600",
+    iconBg: "bg-red-50",
   },
 ];
 
@@ -44,12 +44,12 @@ export default function Stats() {
 
         {/* Section heading */}
         <div className="text-center mb-10 sm:mb-14">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-sky-500 text-center">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-red-500 text-center">
             By the Numbers
           </p>
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl text-center">
             Trusted by operators
-            <span className="block text-sky-400">worldwide.</span>
+            <span className="block text-red-400">worldwide.</span>
           </h2>
         </div>
 
@@ -60,7 +60,7 @@ export default function Stats() {
             return (
               <div
                 key={s.label}
-                className="flex flex-col items-center text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md hover:border-sky-200 transition-all"
+                className="flex flex-col items-center text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md hover:border-red-200 transition-all"
               >
                 {/* Icon */}
                 <span className={`flex items-center justify-center w-14 h-14 rounded-2xl ${s.iconBg} mb-5`}>

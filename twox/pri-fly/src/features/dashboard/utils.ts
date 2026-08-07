@@ -1,4 +1,3 @@
-// TODO: add dashboard-specific helper functions as needed
 import type { DashboardNavItem } from "./types";
 import type { Role } from "../../config/permissions";
 import { permissions } from "../../config/permissions";
@@ -39,4 +38,23 @@ export function groupNavItems(items: DashboardNavItem[]): GroupedNavItems[] {
   }
 
   return groups;
+}
+
+/** "8am-11:59am" -> Good Morning, "12pm-4:59pm" -> Good Afternoon, else Good Evening. */
+export function getGreeting(date: Date = new Date()): string {
+  const hour = date.getHours();
+  if (hour < 12) return "Good Morning";
+  if (hour < 17) return "Good Afternoon";
+  return "Good Evening";
+}
+
+/** Derives a display name from an email local-part, e.g. "georg.johnson@x.com" -> "Georg Johnson". */
+export function getDisplayName(email?: string): string {
+  if (!email) return "there";
+  const local = email.split("@")[0] ?? "";
+  return local
+    .split(/[.\-_]+/)
+    .filter(Boolean)
+    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .join(" ");
 }

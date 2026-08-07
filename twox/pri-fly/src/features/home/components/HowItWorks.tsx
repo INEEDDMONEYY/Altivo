@@ -34,18 +34,18 @@ export default function HowItWorks() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-white">
         {/* Subtle sky accent glow, matching hero */}
-        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-sky-400/10 blur-[160px]" />
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-red-400/10 blur-[160px]" />
 
         <div className="container relative z-10 py-12 sm:py-16 lg:py-24">
           {/* Section heading */}
           <div className="text-center">
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-sky-500 text-center">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-red-500 text-center">
               How It Works
             </p>
 
             <h2 className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl text-center">
               Booking private aviation,
-              <span className="block text-sky-400">simplified end to end.</span>
+              <span className="block text-red-400">simplified end to end.</span>
             </h2>
 
             <p className="mx-auto mt-8 max-w-xl text-lg leading-8 text-slate-600 text-center">
@@ -60,20 +60,20 @@ export default function HowItWorks() {
               return (
                 <div
                   key={step.id}
-                  className="glass relative rounded-2xl bg-white/70 border border-slate-200 p-8 text-center lg:text-left hover:border-sky-300 transition"
+                  className="glass relative rounded-2xl bg-white/70 border border-slate-200 p-8 text-center lg:text-left hover:border-red-300 transition"
                 >
                   <div className="flex items-center justify-center lg:justify-start gap-3">
-                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 text-white">
+                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-red-400 to-gray-600 text-white">
                       <Icon size={20} />
                     </span>
-                    <span className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-500">
+                    <span className="text-xs font-semibold uppercase tracking-[0.25em] text-red-500">
                       {step.label}
                     </span>
                   </div>
 
                   <h3 className="mt-7 text-xl font-bold text-slate-900 text-center lg:text-left">
                     {step.title}{" "}
-                    <span className="text-sky-400">{step.titleAccent}</span>
+                    <span className="text-red-400">{step.titleAccent}</span>
                   </h3>
 
                   <p className="mt-4 text-sm leading-7 text-slate-600 text-center lg:text-left">

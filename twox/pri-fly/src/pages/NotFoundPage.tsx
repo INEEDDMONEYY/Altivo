@@ -6,15 +6,15 @@ export default function NotFoundPage() {
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-slate-950 text-white px-4 text-center">
 
       {/* Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-sky-500/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-red-500/10 blur-[120px] pointer-events-none" />
 
       {/* Icon */}
       <div className="relative z-10 mb-6 flex items-center justify-center w-20 h-20 rounded-2xl bg-white/5 border border-white/10">
-        <Plane className="w-9 h-9 text-sky-400" />
+        <Plane className="w-9 h-9 text-red-400" />
       </div>
 
       {/* 404 */}
-      <p className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-sky-500 mb-3">
+      <p className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-red-500 mb-3">
         Error 404
       </p>
 
@@ -30,7 +30,7 @@ export default function NotFoundPage() {
       <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4">
         <Link
           to="/"
-          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold text-sm tracking-wide hover:opacity-90 transition shadow-lg shadow-sky-500/20"
+          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-red-400 to-gray-500 text-white font-semibold text-sm tracking-wide hover:opacity-90 transition shadow-lg shadow-red-500/20"
         >
           <Home className="w-4 h-4" />
           Back to Home

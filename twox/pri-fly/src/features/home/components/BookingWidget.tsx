@@ -10,9 +10,9 @@ export default function BookingWidget() {
     "w-full rounded-xl bg-transparent text-white text-sm text-center placeholder:text-white/50 outline-none py-3.5 pr-3 border-0";
 
   const wrapperClass =
-    "flex items-center gap-2.5 rounded-xl border border-white/20 bg-white/10 px-3.5 focus-within:border-sky-300/60 focus-within:ring-2 focus-within:ring-sky-300/20 transition";
+    "flex items-center gap-2.5 rounded-xl border border-white/20 bg-white/10 px-3.5 focus-within:border-red-300/60 focus-within:ring-2 focus-within:ring-red-300/20 transition";
 
-  const iconClass = "w-4 h-4 text-sky-300 shrink-0";
+  const iconClass = "w-4 h-4 text-red-300 shrink-0";
 
   return (
     <div className="w-full max-w-sm mx-auto rounded-3xl p-7 border border-white/20 bg-white/15 backdrop-blur-2xl shadow-2xl">
@@ -64,7 +64,7 @@ export default function BookingWidget() {
         </div>
 
         {/* BUTTON */}
-        <button className="mt-1.5 w-full flex items-center justify-center gap-2 rounded-full py-3.5 bg-gradient-to-b from-sky-400 to-sky-600 text-sm font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.4)_inset,0_-4px_8px_rgba(0,0,0,0.15)_inset,0_8px_16px_rgba(56,189,248,0.35)] hover:-translate-y-0.5 active:translate-y-0 transition">
+        <button className="mt-1.5 w-full flex items-center justify-center gap-2 rounded-full py-3.5 bg-gradient-to-b from-red-400 to-red-600 text-sm font-semibold text-white shadow-[0_1px_0_rgba(255,255,255,0.4)_inset,0_-4px_8px_rgba(0,0,0,0.15)_inset,0_8px_16px_rgba(56,189,248,0.35)] hover:-translate-y-0.5 active:translate-y-0 transition">
           <PlaneTakeoff className="w-4 h-4" />
           Request Quotes
         </button>
