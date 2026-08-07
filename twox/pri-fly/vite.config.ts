@@ -7,6 +7,18 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (/react-router|react-dom|\/react\//.test(id)) return "react-vendor";
+            if (/zustand|axios/.test(id)) return "state-vendor";
+          }
+        },
+      },
+    },
+  },
   server: {
     host: true,
     port: 5173,
